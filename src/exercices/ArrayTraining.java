@@ -69,7 +69,7 @@ public class ArrayTraining {
      */
     public int lastValue(int[] array) {
 
-        return array[array.length];
+        return array[array.length - 1];
     }
 
     /**
