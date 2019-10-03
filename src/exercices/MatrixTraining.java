@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MatrixTraining {
 
     /**
@@ -8,7 +10,7 @@ public class MatrixTraining {
      */
     public int[][] emptyIntMatrix(int lines, int columns) {
 
-        return null;
+        return new int[2][3];
     }
 
     /**
@@ -19,7 +21,7 @@ public class MatrixTraining {
      */
     public String[][] emptyStringMatrix(int lines, int columns) {
 
-        return null;
+        return new String[3][2];
     }
 
     /**
@@ -29,8 +31,12 @@ public class MatrixTraining {
      * @return an int matrix with a, b and c arrays
      */
     public int[][] intMatrix(int[] a, int[] b, int[] c) {
-
-        return null;
+        int[][] result = new int[][]{
+                a,
+                b,
+                c,
+        };
+        return result;
     }
 
     /**
@@ -40,8 +46,13 @@ public class MatrixTraining {
      * @return a String matrix with a, b and c arrays
      */
     public String[][] stringMatrix(String[] a, String[] b, String[] c) {
+        String[][] result = new String[][] {
+                a,
+                b,
+                c,
+        };
 
-        return null;
+        return result;
     }
 
     /**
@@ -50,7 +61,7 @@ public class MatrixTraining {
      */
     public int height(int[][] matrix) {
 
-        return 0;
+        return matrix.length;
     }
 
     /**
@@ -59,7 +70,7 @@ public class MatrixTraining {
      */
     public int width(int[][] matrix) {
 
-        return 0;
+        return matrix[0].length;
     }
 
     /**
@@ -70,7 +81,7 @@ public class MatrixTraining {
      */
     public int valueAtPosition(int[][] matrix, int line, int column) {
 
-        return 0;
+        return matrix[line][column];
     }
 
     /**
@@ -82,8 +93,9 @@ public class MatrixTraining {
      * eg: {{1, 2, 3}, {4, 5, 6}}
      */
     public int[][] replace(int[][] matrix, int value, int line, int column) {
+        matrix[line][column] = value;
 
-        return null;
+        return matrix;
     }
 
     /**
@@ -91,8 +103,13 @@ public class MatrixTraining {
      * @return sum of matrix values, eg: 21
      */
     public int sum(int[][] matrix) {
-
-        return 0;
+        int sum = 0;
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[0].length; col++){
+                sum += matrix[row][col];
+            }
+        }
+        return sum;
     }
 
     /**
@@ -101,8 +118,15 @@ public class MatrixTraining {
      * @return if matrix contains searched value, eg: true
      */
     public boolean contains(int[][] matrix, int search) {
-
-        return false;
+        boolean isIt = false;
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[0].length; col++){
+                if (matrix[row][col] == search) {
+                    isIt = true;
+                }
+            }
+        }
+        return isIt;
     }
 
     /**
@@ -110,8 +134,15 @@ public class MatrixTraining {
      * @return how many even numbers are in matrix, eg: 3
      */
     public int countEvens(int[][] matrix) {
-
-        return 0;
+        int evenN = 0;
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[0].length; col++){
+                if (matrix[row][col] % 2 == 0) {
+                    evenN++;
+                }
+            }
+        }
+        return evenN;
     }
 
     /**
@@ -120,7 +151,14 @@ public class MatrixTraining {
      * @return the number of character occurrences in matrix, eg: 3
      */
     public int occurrences(char[][] matrix, char search) {
-
-        return 0;
+        int numChar = 0;
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[0].length; col++){
+                if (matrix[row][col] == search) {
+                    numChar++;
+                }
+            }
+        }
+        return numChar;
     }
 }
